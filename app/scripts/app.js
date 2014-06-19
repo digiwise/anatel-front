@@ -2,14 +2,13 @@
 
 /**
  * @ngdoc overview
- * @name anatelFrontApp
+ * @name anatelFront
  * @description
- * # anatelFrontApp
+ * # anatelFront
  *
  * Main module of the application.
  */
-angular
-  .module('anatelFrontApp', [
+var anatelFront = angular.module('anatelFront', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

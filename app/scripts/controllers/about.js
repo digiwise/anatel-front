@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc function
- * @name anatelFrontApp.controller:AboutCtrl
+ * @name anatelFront.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the anatelFrontApp
+ * Controller of the anatelFront
  */
-angular.module('anatelFrontApp')
-  .controller('AboutCtrl', function ($scope) {
+anatelFront.controller('AboutCtrl', ['$scope',
+  function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+  }]);
