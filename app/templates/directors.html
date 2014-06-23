@@ -1,19 +1,20 @@
 <h1>Quem são?</h1>
+
 <div class="filters">
   <h4>Por indicação:</h4>
   <label><input type="checkbox" name="" value="FHC"> Fernando Henrique (PSDB)</label>
   <label><input type="checkbox" name="" value="Lula"> Lula (PT)</label>
   <label><input type="checkbox" name="" value="Dilma"> Dilma (PT)</label>
 </div>
+
 <div class="row">
-  <div class="col-md-8">
-    <div class="col-md-2 conselheiro" id="conselheiro-0">
-      <div class="nome">
-        Nome do conselheiro
-      </div>
-    </div>
+  <div class="col-md-12 scrollable-h">
+    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-6 director-thumb" ng-repeat="director in directors" id="{{ director.directorId }}" directors-list></div>
   </div>
-  <div class="col-md-4 ficha">
+</div>
+
+<div class="row">
+  <div class="col-md-12 ficha">
     <div class="">
       <h3>Renato Navarro Guerreiro</h3>
       <strong>Quem indicou:</strong> FHC<br>
@@ -38,5 +39,4 @@
       </ul>
     </div>
   </div>
-</div>
 </div>

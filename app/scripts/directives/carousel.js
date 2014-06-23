@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name anatelFrontApp.directive:carousel
+ * @name anatelFront.directive:carousel
  * @description
  * # carousel
  */

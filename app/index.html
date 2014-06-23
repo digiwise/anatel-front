@@ -27,7 +27,7 @@
 
         try {
           //console.log('test');
-          gapi.client.load('anatel', 'v1', gCallback, '//localhost:8080/_ah/api');
+          gapi.client.load('anatel', 'v1', gCallback, 'https://strong-shelter-604.appspot.com/_ah/api');
         }
         catch (e){
           console.log(e);
@@ -44,25 +44,23 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="navbar-wrapper">
-        <div class="container">
-
-            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <!--<div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
             </div>
-
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </div>-->
 
     <div ng-view=""></div>
 
@@ -108,6 +106,8 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/directives/directors.js"></script>
         <script src="scripts/directives/carousel.js"></script>
+        <script src="scripts/directives/directors-list.js"></script>
+        <script src="scripts/directives/imgholder.js"></script>
         <!-- endbuild -->
 </body>
 </html>
