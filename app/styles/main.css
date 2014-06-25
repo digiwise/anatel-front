@@ -253,32 +253,42 @@ body {
 /* added by Sam */
 .scrollable-h {
     overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     height: auto;
 }
 .director-thumb {
     display: inline-block;
+    height: 100%;
+    max-height: 126px;
     float: none;
     padding-left: 3px;
     padding-right: 3px;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+.thumb-fix:hover, .thumb-selected {
+    background: #8B281C;
+    color: #f7f7f7;
 }
 .thumb-fix {
-    overflow: hidden !important
+    overflow: hidden !important;
     display: inline-block;
     float: none;
-    height: auto;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
 }
 .thumb-wrapper {
     height: 80%;
-    max-height: 120px;
+    max-height: 100px;
+    vertical-align: middle;
     overflow: hidden;
 }
 .thumb-name {
     overflow: hidden;
     height: 20%;
+    max-height: 20px;
     font-weight: bold;
-}
-.thumb-selected {
-    background: #353535;
-    color: #f7f7f7
+    max-width: inherit;
 }
