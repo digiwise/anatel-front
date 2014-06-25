@@ -1,23 +1,45 @@
-<div class="row">
-  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-    <h4><strong>Indicação:</strong> FHC</h4>
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Indicação:</strong></div>
+  <div class="panel-body">
+    {{ directorInformation.appointment }}
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-    <h4>Mandatos</h4>
-    <ol>
-      <li><strong>início:</strong> 05/11/1997 | <strong>Término:</strong> 05/11/2000</li>
-      <li><strong>início:</strong> 05/11/1997 | <strong>Término:</strong> 05/11/2000</li>
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Mandatos:</strong></div>
+  <div class="panel-body">
+    <ol class="director-mandate">
+      <li><strong>Início:</strong> 05/11/1997 | <strong>Término:</strong> 05/11/2000</li>
+      <li><strong>Início:</strong> 05/11/1997 | <strong>Término:</strong> 05/11/2000</li>
     </ol>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-    <h4>Biografia</h4>
-    <p>Engenheiro eletricista com especialização em Telecomunicações pela Pontifícia Universidade Católica do Rio de Janeiro (PUC-RJ)</p>
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Naturalidade:</strong></div>
+  <div class="panel-body">
+    {{ directorInformation.placeOfBirth }}
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Afinidade Política:</strong></div>
+  <div class="panel-body">
+    {{ directorInformation.politicalPartyAffinity }}
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Biografia:</strong></div>
+  <div class="panel-body">
+    {{ directorInformation.biography }}
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Referência:</strong></div>
+  <div class="panel-body overflow-hidden">
+    {{ directorInformation.refLinks }}
   </div>
 </div>
 

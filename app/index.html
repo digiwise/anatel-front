@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -27,7 +27,8 @@
 
         try {
           //console.log('test');
-          gapi.client.load('anatel', 'v1', gCallback, 'https://strong-shelter-604.appspot.com/_ah/api');
+          //gapi.client.load('anatel', 'v1', gCallback, 'https://strong-shelter-604.appspot.com/_ah/api');
+          gapi.client.load('anatel', 'v1', gCallback, '//localhost:8080/_ah/api');
         }
         catch (e){
           console.log(e);
@@ -64,8 +65,10 @@
 
     <div ng-view=""></div>
 
+    <div class="clearfix">&nbsp;</div>
+
     <div class="footer container">
-        <p><span class="glyphicon"></span> Feito durante o Hack Hackers - Junho de 2014</p>
+        <p><span class="glyphicon"></span>Junho de 2014</p>
     </div>
     </div>
 
@@ -100,17 +103,17 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/directives/directors.js"></script>
-        <script src="scripts/directives/carousel.js"></script>
-        <script src="scripts/directives/directors-list.js"></script>
-        <script src="scripts/directives/directors-filters.js"></script>
-        <script src="scripts/directives/director-details.js"></script>
-        <script src="scripts/directives/director-information.js"></script>
-        <script src="scripts/directives/director-professional-history.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/directives/directors.js"></script>
+    <script src="scripts/directives/carousel.js"></script>
+    <script src="scripts/directives/directors-list.js"></script>
+    <script src="scripts/directives/directors-filters.js"></script>
+    <script src="scripts/directives/director-details.js"></script>
+    <script src="scripts/directives/director-information.js"></script>
+    <script src="scripts/directives/director-professional-history.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

@@ -14,9 +14,10 @@ anatelFront.directive('directors', ['$rootScope', function ($rootScope) {
 
         $scope.filter = 0;
         $rootScope.directorId = 0;
+        $rootScope.directorsFilters = [1, 2, 3];
 
         gapi.client.anatel.directors.listDirectors({'filter':
-          $scope.filter}).execute(function(resp){
+          $rootScope.directorsFilters}).execute(function(resp){
           if (resp.queryResult){
             $scope.directors = angular.fromJson(resp.queryResult);
             $scope.$apply();
@@ -25,7 +26,20 @@ anatelFront.directive('directors', ['$rootScope', function ($rootScope) {
         });
 
         $rootScope.$watch('directorId', function() {
-          console.log($rootScope.directorId);
+          //console.log($rootScope.directorId);
+        });
+
+        $rootScope.$watchCollection('directorsFilters', function() {
+
+          gapi.client.anatel.directors.listDirectors({'filter':
+            JSON.stringify($rootScope.directorsFilters)}).execute(function(resp){
+            if (resp.queryResult){
+              $scope.directors = angular.fromJson(resp.queryResult);
+              $scope.$apply();
+              //console.log($scope.directors);
+            }
+          });
+
         });
 
 

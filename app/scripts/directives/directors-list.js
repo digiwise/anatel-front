@@ -13,6 +13,11 @@ angular.module('anatelFront')
       restrict: 'A',
       controller: function($scope, $element, $attrs) {
 
+        if ($scope.directors.indexOf( $scope.director) == 0) {
+          $rootScope.directorInformation = $scope.director;
+          $rootScope.$apply;
+        }
+
         $scope.showDirectorDetails = function() {
 
           var thumbList = $element.parent().children();
@@ -23,7 +28,7 @@ angular.module('anatelFront')
           $rootScope.directorId = $attrs.id;
           $rootScope.$apply();
           //console.log($attrs.id);
-          console.log($rootScope);
+          //console.log($rootScope);
         };
 
       },

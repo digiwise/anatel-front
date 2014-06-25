@@ -292,3 +292,42 @@ body {
     font-weight: bold;
     max-width: inherit;
 }
+.director-details li.active a{
+    background-color: #eee !important;
+}
+.director-tab {
+    border-radius: 0 0 4px 4px;
+    background-color: #eee;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+
+}
+.director-tab-item {
+    border-radius: 4px 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 5px 0 10px 0;
+}
+.director-mandate {
+
+}
+.director-mandate li {
+    margin-bottom: 10px;
+}
+.inner-row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.overflow-hidden {
+    overflow: hidden !important;
+}
+.filter-selected {
+    background-color: rgb(235, 235, 235);
+    box-shadow: rgba(0, 0, 0, 0.121569) 0 3px 5px 0 inset;
+}
+.filter-deselected {
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: none;
+}
