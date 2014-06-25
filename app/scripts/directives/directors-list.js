@@ -13,9 +13,11 @@ angular.module('anatelFront')
       restrict: 'A',
       controller: function($scope, $element, $attrs) {
 
-        if ($scope.directors.indexOf( $scope.director) == 0) {
+        if ($scope.directors.indexOf($scope.director) == 0) {
           $rootScope.directorInformation = $scope.director;
-          $rootScope.$apply;
+          $rootScope.directorInformation.mandates = angular.fromJson($scope.director.mandates);
+          $rootScope.directorInformation.refLinks = angular.fromJson($scope.director.refLinks);
+          //$rootScope.$apply();
         }
 
         $scope.showDirectorDetails = function() {

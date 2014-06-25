@@ -8,9 +8,10 @@
 <div class="panel panel-default">
   <div class="panel-heading"><strong>Mandatos:</strong></div>
   <div class="panel-body">
-    <ol class="director-mandate">
-      <li><strong>Início:</strong> 05/11/1997 | <strong>Término:</strong> 05/11/2000</li>
-      <li><strong>Início:</strong> 05/11/1997 | <strong>Término:</strong> 05/11/2000</li>
+    <ol class="director-mandate" ng-repeat="mandate in directorInformation.mandates">
+      <li>
+        <strong>Início:</strong> {{ mandate.start }} | <strong>Término:</strong> {{ mandate.end }}
+      </li>
     </ol>
   </div>
 </div>
@@ -38,8 +39,10 @@
 
 <div class="panel panel-default">
   <div class="panel-heading"><strong>Referência:</strong></div>
-  <div class="panel-body overflow-hidden">
-    {{ directorInformation.refLinks }}
+  <div class="panel-body overflow-hidden" >
+    <ul class="director-links" ng-repeat="link in directorInformation.refLinks">
+      <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
+    </ul>
   </div>
 </div>
 

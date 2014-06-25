@@ -17,15 +17,15 @@ angular.module('anatelFront')
           if ($rootScope.directorInformation) {
 
             switch ($rootScope.directorInformation.appointment) {
-              case 0:
+              case 1:
                 $rootScope.directorInformation.appointment = "FHC";
                 break;
 
-              case 1:
+              case 2:
                 $rootScope.directorInformation.appointment = "Lula";
                 break;
 
-              case 2:
+              case 3:
                 $rootScope.directorInformation.appointment = "Dilma";
                 break;
 
@@ -33,7 +33,7 @@ angular.module('anatelFront')
                 $rootScope.directorInformation.appointment = "Not Available";
             }
             $rootScope.$apply;
-            console.log($rootScope.directorInformation);
+            //console.log($rootScope.directorInformation);
 
           }
         });

@@ -26,7 +26,21 @@ anatelFront.directive('directors', ['$rootScope', function ($rootScope) {
         });
 
         $rootScope.$watch('directorId', function() {
+
           //console.log($rootScope.directorId);
+
+          gapi.client.anatel.director.get({'directorId':
+            $rootScope.directorId}).execute(function(resp){
+            //console.log(resp);
+            if (resp.queryResult){
+              $rootScope.directorInformation = angular.fromJson(resp.queryResult);
+              $rootScope.directorInformation.mandates = angular.fromJson($rootScope.directorInformation.mandates);
+              $rootScope.directorInformation.refLinks = angular.fromJson($rootScope.directorInformation.refLinks);
+              $rootScope.$apply();
+            }
+          });
+          //console.log($rootScope.directorInformation);
+
         });
 
         $rootScope.$watchCollection('directorsFilters', function() {
