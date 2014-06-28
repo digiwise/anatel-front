@@ -6,8 +6,8 @@
  * @description
  * # directorInformation
  */
-angular.module('anatelFront')
-  .directive('directorInformation', ['$rootScope', function ($rootScope) {
+anatelFront.directive('directorInformation', ['$rootScope',
+  function ($rootScope) {
     return {
       templateUrl: '/templates/director-information.html',
       restrict: 'E',

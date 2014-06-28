@@ -6,13 +6,13 @@
  * @description
  * # carousel
  */
-angular.module('anatelFront')
-  .directive('carousel', function () {
+anatelFront.directive('cover', ['$rootScope',
+  function ($rootScope) {
     return {
-      templateUrl: '/templates/carousel.html',
+      templateUrl: '/templates/cover.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
         //element.text('this is the carousel directive');
       }
     };
-  });
+  }]);

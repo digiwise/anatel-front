@@ -8,8 +8,8 @@
 <div class="panel panel-default">
   <div class="panel-heading"><strong>Mandatos:</strong></div>
   <div class="panel-body">
-    <ol class="director-mandate" ng-repeat="mandate in directorInformation.mandates">
-      <li>
+    <ol class="director-mandate">
+      <li ng-repeat="mandate in directorInformation.mandates">
         <strong>Início:</strong> {{ mandate.start }} | <strong>Término:</strong> {{ mandate.end }}
       </li>
     </ol>
@@ -40,8 +40,10 @@
 <div class="panel panel-default">
   <div class="panel-heading"><strong>Referência:</strong></div>
   <div class="panel-body overflow-hidden" >
-    <ul class="director-links" ng-repeat="link in directorInformation.refLinks">
-      <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
+    <ul class="director-links" >
+      <li ng-repeat="link in directorInformation.refLinks">
+        <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+      </li>
     </ul>
   </div>
 </div>

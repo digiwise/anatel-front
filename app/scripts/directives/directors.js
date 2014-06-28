@@ -6,7 +6,8 @@
  * @description
  * # directors
  */
-anatelFront.directive('directors', ['$rootScope', function ($rootScope) {
+anatelFront.directive('directors', ['$rootScope',
+  function ($rootScope) {
     return {
       restrict: 'E',
       scope: true,
@@ -28,7 +29,6 @@ anatelFront.directive('directors', ['$rootScope', function ($rootScope) {
         $rootScope.$watch('directorId', function() {
 
           //console.log($rootScope.directorId);
-
           gapi.client.anatel.director.get({'directorId':
             $rootScope.directorId}).execute(function(resp){
             //console.log(resp);
@@ -40,20 +40,33 @@ anatelFront.directive('directors', ['$rootScope', function ($rootScope) {
             }
           });
           //console.log($rootScope.directorInformation);
-
         });
 
         $rootScope.$watchCollection('directorsFilters', function() {
 
-          gapi.client.anatel.directors.listDirectors({'filter':
-            JSON.stringify($rootScope.directorsFilters)}).execute(function(resp){
-            if (resp.queryResult){
-              $scope.directors = angular.fromJson(resp.queryResult);
-              $scope.$apply();
-              //console.log($scope.directors);
-            }
-          });
 
+            gapi.client.anatel.directors.listDirectors({'filter':
+              JSON.stringify($rootScope.directorsFilters)}).execute(function(resp){
+              var data = angular.fromJson(resp.queryResult);
+              //console.log(data);
+              $scope.directors = data;
+              $scope.$apply();
+              //console.log(data.length);
+              //console.log($scope.directors);
+            });
+
+          if (!$rootScope.directorsFilters.length) {
+            $rootScope.directorInformation.appointment = ' ';
+            $rootScope.directorInformation.biography = ' ';
+            $rootScope.directorInformation.placeOfBirth = ' ';
+            $rootScope.directorInformation.politicalPartyAffinity = ' ';
+            $rootScope.directorInformation.directorName = 'Not Available';
+            $rootScope.directorInformation.mandates['1'].start = ' ';
+            $rootScope.directorInformation.mandates['1'].end = ' ';
+            $rootScope.directorInformation.refLinks['1'].title = ' ';
+            $rootScope.directorInformation.refLinks['1'].url = ' ';
+            //$rootScope.$apply();
+          }
         });
 
 

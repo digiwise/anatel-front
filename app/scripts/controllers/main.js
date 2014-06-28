@@ -7,10 +7,10 @@
  * # MainCtrl
  * Controller of the anatelFront
  */
-anatelFront.controller('MainCtrl', ['$scope',
-  function ($scope) {
+anatelFront.controller('MainCtrl', ['$rootScope',
+  function ($rootScope) {
 
-    $scope.mainTest = "code on controller";
+    $rootScope.mainTest = "code on controller";
 
 
   }]);

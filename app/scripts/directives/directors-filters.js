@@ -6,8 +6,8 @@
  * @description
  * # directorsFilters
  */
-angular.module('anatelFront')
-  .directive('directorsFilters', ['$rootScope', function ($rootScope) {
+anatelFront.directive('directorsFilters', ['$rootScope',
+  function ($rootScope) {
     return {
       templateUrl: '/templates/directors-filters.html',
       restrict: 'E',
@@ -17,10 +17,10 @@ angular.module('anatelFront')
 
           var angularEl = angular.element(el);
           //deselect filter
-          if (el.attributes.selected.value == 1){
+          if (el.attributes.active.value == 1){
             angularEl.removeClass('filter-selected');
             angularEl.addClass('filter-deselected');
-            el.attributes.selected.value = 0;
+            el.attributes.active.value = 0;
             var filterIndex = $rootScope.directorsFilters.indexOf(parseInt(el.attributes.filter.value));
             if (filterIndex > -1) {
               $rootScope.directorsFilters.splice(filterIndex, 1);
@@ -30,7 +30,7 @@ angular.module('anatelFront')
           else {
             angularEl.removeClass('filter-deselected');
             angularEl.addClass('filter-selected');
-            el.attributes.selected.value = 1;
+            el.attributes.active.value = 1;
             $rootScope.directorsFilters.push(parseInt(el.attributes.filter.value));
             //console.log(el.attributes.filter.value);
           }

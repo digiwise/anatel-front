@@ -6,8 +6,8 @@
  * @description
  * # directorProfessionalHistory
  */
-angular.module('anatelFront')
-  .directive('directorProfessionalHistory', ['$rootScope', function ($rootScope) {
+anatelFront.directive('directorProfessionalHistory', ['$rootScope',
+  function ($rootScope) {
     return {
       templateUrl: '/templates/director-professional-history.html',
       restrict: 'E',

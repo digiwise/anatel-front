@@ -6,18 +6,24 @@
  * @description
  * # directorsList
  */
-angular.module('anatelFront')
-  .directive('directorsList', ['$rootScope', function ($rootScope) {
+anatelFront.directive('directorsList', ['$rootScope',
+  function ($rootScope) {
     return {
       templateUrl: '/templates/directors-list.html',
       restrict: 'A',
       controller: function($scope, $element, $attrs) {
 
-        if ($scope.directors.indexOf($scope.director) == 0) {
-          $rootScope.directorInformation = $scope.director;
-          $rootScope.directorInformation.mandates = angular.fromJson($scope.director.mandates);
-          $rootScope.directorInformation.refLinks = angular.fromJson($scope.director.refLinks);
-          //$rootScope.$apply();
+        if ($rootScope.directorsFilters.length > 0) {
+          if ($scope.directors.indexOf($scope.director) == 0) {
+            $rootScope.directorInformation = $scope.director;
+            $rootScope.directorInformation.mandates = angular.fromJson($scope.director.mandates);
+            $rootScope.directorInformation.refLinks = angular.fromJson($scope.director.refLinks);
+            //$rootScope.$apply();
+          }
+        }
+        else {
+          $scope.directors = [];
+          $scope.apply();
         }
 
         $scope.showDirectorDetails = function() {
