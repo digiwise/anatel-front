@@ -9,7 +9,7 @@
 anatelFront.directive('directorInformation', ['$rootScope',
   function ($rootScope) {
     return {
-      templateUrl: '/templates/director-information.html',
+      templateUrl: 'templates/director-information.html',
       restrict: 'E',
       controller: function($scope, $element, $attrs) {
 

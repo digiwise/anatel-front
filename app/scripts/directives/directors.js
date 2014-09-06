@@ -71,7 +71,7 @@ anatelFront.directive('directors', ['$rootScope',
 
 
       },
-      templateUrl: '/templates/directors.html',
+      templateUrl: 'templates/directors.html',
       link: function postLink(scope, element, attrs) {
         //element.text(scope.test2);
       }
